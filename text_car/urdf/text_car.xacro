@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="ares_laser_gazebo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Included URDF Files -->
+    <include filename="$(find text_car)/urdf/text_car_body.xacro" />
+	<robot_base />
+	<include filename="$(find text_car)/urdf/laser.xacro" />
+	<laser />
+</robot>

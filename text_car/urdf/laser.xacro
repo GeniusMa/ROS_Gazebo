@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="laser" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<macro name="laser">
+		<link
+			name="rplidar_link">
+			<inertial>
+			  <origin
+			    xyz="0.00344036966251345 7.37749433192095E-06 -0.00328997391799356"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.0440853117929136" />
+			  <inertia
+			    ixx="6.76917054352029E-06"
+			    ixy="-1.40414731456132E-08"
+			    ixz="1.58932195930401E-06"
+			    iyy="1.25441705125978E-05"
+			    iyz="3.77814582231421E-09"
+			    izz="1.45513282037576E-05" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/rplidar_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/rplidar_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="rplidar_joint"
+			type="fixed">
+			<origin
+			  xyz="-0.045021 -0.00011645 0.063251"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="rplidar_link" />
+			<axis
+			  xyz="0 0 0" />
+			</joint>
+			<gazebo reference="rplidar_link">
+			  <sensor type="ray" name="rplidar">
+			      <pose>0 0 0 0 0 0</pose>
+			      <visualize>false</visualize>
+			      <update_rate>40</update_rate>
+			      <ray>
+			          <scan>
+			            <horizontal>
+			              <samples>360</samples>
+			              <resolution>1</resolution>
+			              <min_angle>-3</min_angle>
+			              <max_angle>3</max_angle>
+			            </horizontal>
+			          </scan>
+			          <range>
+			            <min>0.13</min>
+			            <max>6.0</max>
+			            <resolution>0.01</resolution>
+			          </range>
+			          <noise>
+			            <type>gaussian</type>
+			            <mean>0.0</mean>
+			            <stddev>0.01</stddev>
+			          </noise>
+			      </ray>
+			      <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+			          <topicName>/scan</topicName>
+			          <frameName>rplidar_link</frameName>
+			      </plugin>
+			  </sensor>
+			</gazebo>
+	</macro>
+</robot>

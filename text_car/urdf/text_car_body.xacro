@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="robot_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<macro name="robot_base">
+			<link
+			name="base_link">
+			<inertial>
+			  <origin
+			    xyz="0.0050911 4.8892E-07 0.01783"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.42367" />
+			  <inertia
+			    ixx="0.00033421"
+			    ixy="-1.3671E-08"
+			    ixz="-8.3492E-06"
+			    iyy="0.00091098"
+			    iyz="-4.4951E-10"
+			    izz="0.0010494" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/base_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.89804 0.91765 0.92941 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/base_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<link
+			name="wheel_lf_link">
+			<inertial>
+			  <origin
+			    xyz="0 6.9389E-18 0"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.014421" />
+			  <inertia
+			    ixx="1.5767E-06"
+			    ixy="2.3673E-22"
+			    ixz="3.9409E-23"
+			    iyy="2.9131E-06"
+			    iyz="1.0804E-22"
+			    izz="1.5767E-06" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_lf_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.29804 0.29804 0.29804 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_lf_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="wheel_lf_joint"
+			type="continuous">
+			<origin
+			  xyz="0.030252 0.047909 0.0125"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="wheel_lf_link" />
+			<axis
+			  xyz="0 1 0" />
+			</joint>
+			<link
+			name="wheel_lb_link">
+			<inertial>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.0144212674480035" />
+			  <inertia
+			    ixx="1.57672524098172E-06"
+			    ixy="1.13741391677082E-22"
+			    ixz="5.13225232109595E-23"
+			    iyy="2.91309602449671E-06"
+			    iyz="-8.7136673847894E-23"
+			    izz="1.57672524098172E-06" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_lb_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_lb_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="wheel_lb_joint"
+			type="continuous">
+			<origin
+			  xyz="-0.038232 0.047909 0.0125"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="wheel_lb_link" />
+			<axis
+			  xyz="0 1 0" />
+			</joint>
+			<link
+			name="wheel_rf_link">
+			<inertial>
+			  <origin
+			    xyz="-3.46944695195361E-18 0 0"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.0144212674480035" />
+			  <inertia
+			    ixx="1.57672524098172E-06"
+			    ixy="-3.87159848409819E-22"
+			    ixz="-1.18932259744173E-22"
+			    iyy="2.91309602449671E-06"
+			    iyz="1.50858585557156E-23"
+			    izz="1.57672524098172E-06" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_rf_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_rf_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="wheel_rf_joint"
+			type="continuous">
+			<origin
+			  xyz="0.030252 -0.047909 0.0125"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="wheel_rf_link" />
+			<axis
+			  xyz="0 1 0" />
+			</joint>
+			<link
+			name="wheel_rb_link">
+			<inertial>
+			  <origin
+			    xyz="0 6.93889390390723E-18 0"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.0144212674480035" />
+			  <inertia
+			    ixx="1.57672524098172E-06"
+			    ixy="-4.25809202176743E-23"
+			    ixz="-1.29580291984578E-23"
+			    iyy="2.91309602449671E-06"
+			    iyz="-2.51093328731628E-23"
+			    izz="1.57672524098172E-06" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_rb_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/wheel_rb_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="wheel_rb_joint"
+			type="continuous">
+			<origin
+			  xyz="-0.038232 -0.047909 0.0125"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="wheel_rb_link" />
+			<axis
+			  xyz="0 1 0" />
+			</joint>
+			
+			<link
+			name="camera_link">
+			<inertial>
+			  <origin
+			    xyz="0.00205204505572645 -1.26847037710518E-05 -0.00103131655560996"
+			    rpy="0 0 0" />
+			  <mass
+			    value="0.0189293135624072" />
+			  <inertia
+			    ixx="9.07321514973935E-06"
+			    ixy="2.02846156791509E-09"
+			    ixz="-1.88593898021402E-07"
+			    iyy="1.13641781578178E-06"
+			    iyz="2.15387339277057E-10"
+			    izz="9.32147953453488E-06" />
+			</inertial>
+			<visual>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/camera_link.STL" />
+			  </geometry>
+			  <material
+			    name="">
+			    <color
+			      rgba="0.525490196078431 0.525490196078431 0.525490196078431 1" />
+			  </material>
+			</visual>
+			<collision>
+			  <origin
+			    xyz="0 0 0"
+			    rpy="0 0 0" />
+			  <geometry>
+			    <mesh
+			      filename="package://text_car/meshes/camera_link.STL" />
+			  </geometry>
+			</collision>
+			</link>
+			<joint
+			name="camera_joint"
+			type="fixed">
+			<origin
+			  xyz="0.095248 0 0.050634"
+			  rpy="0 0 0" />
+			<parent
+			  link="base_link" />
+			<child
+			  link="camera_link" />
+			<axis
+			  xyz="0 0 0" />
+			</joint>
+
+		  <gazebo reference="base_link">
+		    <material>Gazebo/Orange</material>
+		  </gazebo>
+		  <gazebo reference="rplidar_link">
+		    <material>Gazebo/Grey</material>
+		  </gazebo>
+		  <gazebo reference="wheel_lf_link">
+		    <material>Gazebo/Black</material>
+		  </gazebo>
+		  <gazebo reference="wheel_lb_link">
+		    <material>Gazebo/Black</material>
+		  </gazebo>
+		  <gazebo reference="wheel_rf_link">
+		    <material>Gazebo/Black</material>
+		  </gazebo>
+		  <gazebo reference="wheel_rb_link">
+		    <material>Gazebo/Black</material>
+		  </gazebo>
+		  <gazebo reference="camera_link">
+		    <material>Gazebo/Grey</material>
+		  </gazebo>
+			
+			<gazebo>
+			    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+				<alwaysOn>true</alwaysOn>
+			        <updateRate>100.0</updateRate>
+			        <robotNamespace>/</robotNamespace>
+			        <leftFrontJoint>wheel_lf_joint</leftFrontJoint>
+			        <rightFrontJoint>wheel_rf_joint</rightFrontJoint>
+			        <leftRearJoint>wheel_lb_joint</leftRearJoint>
+			        <rightRearJoint>wheel_rb_joint</rightRearJoint>
+			        <wheelSeparation>0.68</wheelSeparation>
+			        <wheelDiameter>0.2</wheelDiameter>
+			        <robotBaseFrame>$(arg bodyframe)/base_link</robotBaseFrame>
+			        <torque>20</torque>
+			        <commandTopic>cmd_vel</commandTopic>
+			    	<odometryTopic>odom</odometryTopic>
+			    	<odometryFrame>odom</odometryFrame>
+			    	<broadcastTF>1</broadcastTF>
+			    </plugin>
+			</gazebo>
+	</macro>
+</robot>
